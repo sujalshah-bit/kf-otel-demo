@@ -1,0 +1,16 @@
+[project]
+name = "kube-trainer"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10.14"
+dependencies = [
+    "ipykernel>=7.2.0",
+    "jupyter>=1.1.1",
+    "kubeflow-trainer-api",
+    "kubeflow[otel]",
+]
+
+[tool.uv.sources]
+kubeflow = { path = "../../../../../code/opensource/kubeflow/sdk", editable = true }
+kubeflow-trainer-api = { git = "https://github.com/kubeflow/trainer.git", subdirectory = "api/python_api", rev = "5959ae7dd3b7aac80c82ad9563872bc8bee7635d" }
